@@ -3,100 +3,23 @@ import Button from "./Button";
 
 function Card(props) {
 
-    const database = [
-        {
-            id: 1,
-            name: "MacBook",
-            price: 100000,
-            bought: false,
-            rating: 5,
-            image: "http://intocode.ru/d/react-project-1/images/1.jpg"
-        },
-        {
-            id: 2,
-            name: "Galaxy",
-            price: 35999,
-            bought: false,
-            rating: 4,
-            image: "http://intocode.ru/d/react-project-1/images/2.jpg"
-        },
-        {
-            id: 3,
-            name: "Скутер",
-            price: 65500,
-            bought: false,
-            rating: 5,
-            image: "http://intocode.ru/d/react-project-1/images/3.jpg"
-        },
-        {
-            id: 4,
-            name: "Монитор Samsung",
-            price: 12000,
-            bought: false,
-            rating: 3,
-            image: "http://intocode.ru/d/react-project-1/images/4.jpg"
-        },
-        {
-            id: 5,
-            name: "Респераторная маска",
-            price: 500,
-            bought: false,
-            rating: 5,
-            image: "http://intocode.ru/d/react-project-1/images/5.jpg"
-        },
-        {
-            id: 6,
-            name: "Стиральная машина",
-            price: 100000,
-            bought: false,
-            rating: 3,
-            image: "http://intocode.ru/d/react-project-1/images/6.jpg"
-        },
-        {
-            id: 7,
-            name: "Белый холодильник",
-            price: 43100,
-            bought: false,
-            rating: 5,
-            image: "http://intocode.ru/d/react-project-1/images/7.jpg"
-        },
-        {
-            id: 8,
-            name: "Колонка",
-            price: 3000,
-            bought: false,
-            rating: 4,
-            image: "http://intocode.ru/d/react-project-1/images/8.jpg"
-        },
-        {
-            id: 9,
-            name: "Наушники",
-            price: 1500,
-            bought: false,
-            rating: 5,
-            image: "http://intocode.ru/d/react-project-1/images/9.jpg"
-        }
-    ];
-
-    const todo = database.map((content) => {
-        return (
-            <div className="card">
-                <div className="card-image">
-                    <img src={content.image} alt=""/>
-                </div>
-                <div className="card-info">
-                    <div className="card-name">{content.name}</div>
-                    <div className="card-price">{content.price}</div>
-                    <Button />
-                </div>
-
-            </div>
-        )
-    })
-
     return (
         <>
-            {todo}
+            {props.product.map((item) => {
+                return (
+                    <div className="card">
+                        <div className="card-image">
+                            <img src={item.image} alt=""/>
+                        </div>
+                        <div className="card-info">
+                            <div className="card-name">{item.name}</div>
+                            <div className="card-rating">{item.rating}*</div>
+                            <div className="card-price">{item.price}₽</div>
+                            <Button product={props.product}/>
+                        </div>
+                    </div>
+                );
+            })}
         </>
     );
 }

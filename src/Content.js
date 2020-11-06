@@ -3,10 +3,9 @@ import Card from "./Card";
 
 function Content(props) {
 
-
     return (
         <div className="content">
-            <Card />
+            <Card product={props.product}/>
         </div>
     );
 }

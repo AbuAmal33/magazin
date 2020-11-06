@@ -8,7 +8,7 @@ function Header(props) {
         <div className="header">
             <Logo />
             <Menu />
-            <Checkout />
+            <Checkout product={props.product}/>
         </div>
     );
 }
