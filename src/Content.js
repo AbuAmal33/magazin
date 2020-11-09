@@ -1,11 +1,15 @@
 import React from 'react';
 import Card from "./Card";
 
-function Content(props) {
+function Content({products, change}) {
 
     return (
         <div className="content">
-            <Card product={props.product} counter={props.counter} bought={props.bought}/>
+            {products.map(product => {
+                return (
+                    <Card {...product} product={product} change={change}/>
+                )
+            })}
         </div>
     );
 }

@@ -8,7 +8,7 @@ function Header(props) {
         <div className="header">
             <Logo />
             <Menu />
-            <Checkout product={props.product} counter={props.counter}/>
+            <Checkout products={props.products} />
         </div>
     );
 }

@@ -6,7 +6,7 @@ function Checkout(props) {
     return (
         <div className="checkout">
             <img src={img} alt="checkout" />
-            <span className="counter" plus={props.plus}>{props.counter}</span>
+            <span className="counter">{(props.products.filter(product => product.bought)).length}</span>
         </div>
     );
 }

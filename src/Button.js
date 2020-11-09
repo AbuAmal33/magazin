@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Button(props) {
+function Button({product, change}) {
     return (
         <div className="card-button">
-            <button className="btn" onClick={props.plus} bought={props.bought}>Добавить в корзину</button>
+            <button className="btn" onClick={() => change(product.id)}>Добавить в корзину</button>
         </div>
     );
 }

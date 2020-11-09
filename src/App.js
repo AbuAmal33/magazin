@@ -4,7 +4,7 @@ import Content from "./Content";
 import {useState} from "react"
 
 function App() {
-    const [product, setProduct] = useState([
+    const [products, setProducts] = useState([
         {
             id: 1,
             name: "MacBook",
@@ -79,18 +79,14 @@ function App() {
         }
     ]);
 
-    const [counter, setCounter] = useState(0)
-
-    const plus = () => {setCounter(counter + 1)}
-
-    const bought = () => {
-        setProduct([...product, {id:this, bought: true}])
+    function shop (id) {
+        setProducts(products.map(product => product.id === id ? {...product, bought: true} : product))
     }
 
   return (
       <div className="app">
-        <Header product={product} counter={counter} plus={plus} />
-        <Content product={product} counter={counter} plus={plus} bought={bought}/>
+        <Header products={products} />
+        <Content products={products} change={shop} />
       </div>
   );
 }
