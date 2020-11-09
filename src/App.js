@@ -4,8 +4,6 @@ import Content from "./Content";
 import {useState} from "react"
 
 function App() {
-
-
     const [product, setProduct] = useState([
         {
             id: 1,
@@ -81,10 +79,18 @@ function App() {
         }
     ]);
 
+    const [counter, setCounter] = useState(0)
+
+    const plus = () => {setCounter(counter + 1)}
+
+    const bought = () => {
+        setProduct([...product, {id:this, bought: true}])
+    }
+
   return (
       <div className="app">
-        <Header product={product}/>
-        <Content product={product}/>
+        <Header product={product} counter={counter} plus={plus} />
+        <Content product={product} counter={counter} plus={plus} bought={bought}/>
       </div>
   );
 }

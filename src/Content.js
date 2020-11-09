@@ -5,7 +5,7 @@ function Content(props) {
 
     return (
         <div className="content">
-            <Card product={props.product}/>
+            <Card product={props.product} counter={props.counter} bought={props.bought}/>
         </div>
     );
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import Button from "./Button";
 
 function Card(props) {
-
     return (
         <>
             {props.product.map((item) => {
@@ -15,7 +14,7 @@ function Card(props) {
                             <div className="card-name">{item.name}</div>
                             <div className="card-rating">{item.rating}*</div>
                             <div className="card-price">{item.price}₽</div>
-                            <Button product={props.product}/>
+                            <Button product={props.product} counter={props.counter} bought={props.bought}/>
                         </div>
                     </div>
                 );
