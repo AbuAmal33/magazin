@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Button({product, change}) {
+function Button({todo}) {
     return (
         <div className="card-button">
-            <button className="btn" onClick={() => change(product.id)}>Добавить в корзину</button>
+            <button className="btn" onClick={todo}>Добавить в корзину</button>
         </div>
     );
 }

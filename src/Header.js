@@ -4,6 +4,7 @@ import Menu from "./Menu";
 import Checkout from "./Checkout/Checkout";
 
 function Header(props) {
+
     return (
         <div className="header">
             <Logo />

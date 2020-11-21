@@ -1,13 +1,16 @@
 import React from 'react';
 import Card from "./Card";
+import {useSelector} from "react-redux";
 
-function Content({products, change}) {
+function Content(props) {
+
+    const shop = useSelector(state => state.products);
 
     return (
         <div className="content">
-            {products.map(product => {
+            {shop.map((product, index) => {
                 return (
-                    <Card {...product} product={product} change={change}/>
+                    <Card key={(index)} product={product}/>
                 )
             })}
         </div>
