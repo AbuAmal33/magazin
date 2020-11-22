@@ -86,9 +86,11 @@ const defaultState = {
 const reducer = (state = defaultState, action) => {
     switch (action.type) {
         case 'bought':
-            return state.map(product => {
-                return action.id === product.id ? {...product, bought: !product.bought} : product
-            })
+            return {
+                products: state.products.map((product, index) => {
+                    return index === action.index ? {...product, bought: !product.bought} : product
+                })
+            }
         default:
             return state
     }

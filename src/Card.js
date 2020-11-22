@@ -5,8 +5,8 @@ import {useDispatch} from "react-redux";
 function Card({product}) {
 
     const dispatch = useDispatch();
-    function todo(id) {
-        dispatch({type: 'bought', id})
+    function todo(index) {
+        dispatch({type: 'bought', index})
     }
 
     return (
